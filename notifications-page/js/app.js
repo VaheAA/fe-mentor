@@ -31,6 +31,13 @@ notifications.forEach((notif) => {
       notif.setAttribute('data-status', 'unread');
     }
     getNotificationCount();
+    if (notificationsCount.textContent === '0') {
+      readBtn.textContent = 'Mark all as unread';
+      readBtn.setAttribute('data-action', 'unread');
+    } else {
+      readBtn.textContent = 'Mark all as read';
+      readBtn.setAttribute('data-action', 'read');
+    }
   });
 });
 
