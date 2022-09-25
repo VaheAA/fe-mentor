@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script async src="js/app.js"></script>
+    <title>Fill the card</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="card">
+        <div class="card__details">
+          <div class="card__details-front">
+            <img src="images/card-logo.svg" alt="" class="card__details-logo" />
+            <span class="card__details-number" data-field="number"
+              >0000 0000 0000 0000</span
+            >
+            <div class="card__details-bottom">
+              <span class="card__details-owner" data-field="owner"
+                >Name Surname</span
+              >
+              <span class="card__details-date">
+                <span data-field="mm">00</span>
+                /
+                <span data-field="yy">00</span>
+              </span>
+            </div>
+          </div>
+          <div class="card__details-back">
+            <span class="card__details-cvc" data-field="cvc">000</span>
+          </div>
+        </div>
+        <div class="card__fill">
+          <form class="card__form">
+            <div class="card__form-controls">
+              <div class="card__form-group">
+                <label class="card__form-label" for="owner"
+                  >Cardholder Name</label
+                >
+                <input
+                  class="card__form-input"
+                  type="text"
+                  name="owner"
+                  id="owner"
+                  placeholder="e.g. Jane Appleseed"
+                  data-input="owner"
+                />
+                <span class="card__form-error"></span>
+              </div>
+              <div class="card__form-group">
+                <label class="card__form-label" for="number">Card Number</label>
+                <input
+                  class="card__form-input"
+                  type="text"
+                  name="number"
+                  id="number"
+                  maxlength="16"
+                  placeholder="e.g. 1234 5678 9123 0000"
+                  data-input="number"
+                />
+                <span class="card__form-error"></span>
+              </div>
+              <div class="card__form-row">
+                <fieldset class="fieldset">
+                  <legend class="card__form-label">Exp. Date (MM/YY)</legend>
+                  <div class="card__form-group card__form-input-group">
+                    <input
+                      class="card__form-input"
+                      type="text"
+                      name="mm"
+                      id="mm"
+                      placeholder="MM"
+                      data-input="mm"
+                    />
+                    <span class="card__form-error"></span>
+                  </div>
+                  <div class="card__form-group card__form-input-group">
+                    <input
+                      class="card__form-input"
+                      type="text"
+                      name="yy"
+                      id="yy"
+                      placeholder="YY"
+                      data-input="yy"
+                    />
+                    <span class="card__form-error"></span>
+                  </div>
+                </fieldset>
+                <div class="card__form-group">
+                  <label class="card__form-label" for="cvv">CVV</label>
+                  <input
+                    class="card__form-input"
+                    type="number"
+                    name="cvv"
+                    id="cvv"
+                    maxlength="3"
+                    placeholder="e.g. 123"
+                    data-input="cvv"
+                  />
+                  <span class="card__form-error"></span>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-main">Confirm</button>
+            </div>
+          </form>
+          <div class="card__fill-success" id="success">
+            <img
+              class="card_fill-succes-icon"
+              src="images/icon-complete.svg"
+              alt=""
+            />
+            <h2 class="card__fill-title">Thank you!</h2>
+            <span class="card__fill-text">We've added your card details</span>
+            <button class="btn btn-main" data-btn="continue">Continue</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
