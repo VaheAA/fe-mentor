@@ -1,0 +1,29 @@
+@use '../util' as u;
+
+.hero {
+  position: relative;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: u.rem(115);
+  }
+
+  &__content {
+    flex: 2;
+  }
+
+  &__image {
+    background-image: url('../img/images/bg-intro-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left u.rem(-150);
+    width: 100%;
+    height: 100%;
+    flex: 3;
+
+    img {
+      display: block;
+    }
+  }
+}

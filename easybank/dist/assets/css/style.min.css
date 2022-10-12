@@ -27,6 +27,10 @@ body {
   height: 100%;
 }
 
+.main {
+  padding-top: 4.375rem;
+}
+
 h1,
 h2,
 h3 {
@@ -35,17 +39,22 @@ h3 {
   margin-top: 0;
 }
 
-h1 {
+.title {
+  color: var(--darkBlue);
+  font-weight: 400;
+  line-height: 1.1;
+}
+.title--primary {
   font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+  margin-bottom: 1.875rem;
 }
 
-h2 {
-  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
-}
-
-p {
+.description {
   margin-top: 0;
+  color: var(--grayishBlue);
   font-size: 1rem;
+  line-height: 1.6875rem;
+  margin-bottom: 1.875rem;
 }
 
 a,
@@ -167,6 +176,30 @@ meter {
   position: relative;
 }
 
+.hero {
+  position: relative;
+}
+.hero__inner {
+  display: flex;
+  align-items: center;
+  gap: 7.1875rem;
+}
+.hero__content {
+  flex: 2;
+}
+.hero__image {
+  background-image: url("../img/images/bg-intro-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left -9.375rem;
+  width: 100%;
+  height: 100%;
+  flex: 3;
+}
+.hero__image img {
+  display: block;
+}
+
 .logo {
   max-width: 8.8125rem;
   display: block;
@@ -222,7 +255,7 @@ meter {
   padding-block: 0.625rem;
   text-align: center;
   color: var(--white);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 1.5625rem;
   transition: 0.3s ease all;

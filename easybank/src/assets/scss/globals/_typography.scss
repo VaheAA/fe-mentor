@@ -8,17 +8,24 @@ h3 {
   margin-top: 0;
 }
 
-h1 {
-  font-size: clamp(u.rem(28), u.rem(16) + 2vw, u.rem(40));
+.title {
+  color: var(--darkBlue);
+  font-weight: 400;
+  line-height: 1.1;
+
+  &--primary {
+    font-size: clamp(u.rem(28), u.rem(16) + 2vw, u.rem(40));
+    margin-bottom: u.rem(30);
+  }
 }
 
-h2 {
-  font-size: clamp(u.rem(22), u.rem(14) + 1.5vw, u.rem(36));
-}
 
-p {
+.description {
   margin-top: 0;
+  color: var(--grayishBlue);
   font-size: u.rem(16);
+  line-height: u.rem(27);
+  margin-bottom: u.rem(30);
 }
 
 a,
