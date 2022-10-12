@@ -1,0 +1,29 @@
+@use '../util' as u;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: u.$font;
+  background-color: var(--veryLightGray);
+  color: var(--text-color);
+  font-size: u.rem(18)
+}
+
+.container {
+  width: min(100% - u.rem(40), u.rem(1120));
+  margin-inline: auto;
+  height: 100%;
+}

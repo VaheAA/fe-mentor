@@ -1,0 +1,18 @@
+@use '../util' as u;
+
+.btn {
+  display: inline-block;
+  width: u.rem(165);
+  background-image: linear-gradient(to right, var(--limeGreen), var(--brightCyan));
+  padding-block: u.rem(10);
+  text-align: center;
+  color: var(--white);
+  font-size: u.rem(18);
+  font-weight: bold;
+  border-radius: u.rem(25);
+  transition: 0.3s ease all;
+
+  &:hover {
+    opacity: .75;
+  }
+}

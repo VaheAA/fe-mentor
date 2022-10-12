@@ -1,0 +1,13 @@
+@use '../util' as u;
+
+
+.logo {
+  max-width: u.rem(141);
+  display: block;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

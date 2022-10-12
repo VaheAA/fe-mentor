@@ -1,0 +1,19 @@
+@use '../util' as u;
+
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: u.rem(70);
+  background-color: var(--white);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+}

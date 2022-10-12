@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", sans-serif;
+  background-color: var(--veryLightGray);
+  color: var(--text-color);
+  font-size: 1.125rem;
+}
+
+.container {
+  width: min(100% - 2.5rem, 70rem);
+  margin-inline: auto;
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+}
+
+p {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+:root {
+  --darkBlue: hsl(233, 26%, 24%);
+  --limeGreen: hsl(136, 65%, 51%);
+  --brightCyan: hsl(192, 70%, 51%);
+  --grayishBlue: hsl(233, 8%, 62%);
+  --lightGrayishBlue: hsl(220, 16%, 96%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/***
+    The new CSS reset - version 1.7.3 (last updated 7.8.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 4.375rem;
+  background-color: var(--white);
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.logo {
+  max-width: 8.8125rem;
+  display: block;
+}
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nav {
+  height: 100%;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2.1875rem;
+  height: 100%;
+}
+.nav__item {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.nav__item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right, var(--limeGreen), var(--brightCyan));
+  height: 0.1875rem;
+  width: 0;
+  transition: all 0.3s ease;
+}
+.nav__item:hover::after {
+  width: 100%;
+}
+.nav__link {
+  display: inline-block;
+  color: var(--grayishBlue);
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+.nav__link:hover {
+  color: var(--darkBlue);
+}
+
+.btn {
+  display: inline-block;
+  width: 10.3125rem;
+  background-image: linear-gradient(to right, var(--limeGreen), var(--brightCyan));
+  padding-block: 0.625rem;
+  text-align: center;
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 1.5625rem;
+  transition: 0.3s ease all;
+}
+.btn:hover {
+  opacity: 0.75;
+}
