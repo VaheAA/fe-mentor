@@ -1,0 +1,63 @@
+@use '../util' as u;
+
+.hamburger {
+  cursor: pointer;
+  height: 100%;
+  display: none;
+
+  @include u.breakpoint-down(small) {
+    display: block;
+  }
+
+  &__icon {
+    width: 100%;
+    display: block;
+  }
+}
+
+.menu {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  height: 0;
+  overflow: hidden;
+
+  @include u.breakpoint-down(small) {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background: linear-gradient(rgba(45, 49, 77, .75) 1%, rgba(45, 49, 77, 0.15) 82%);
+  }
+
+  &__list {
+    background-color: var(--white);
+    width: min(100% - u.rem(40), u.rem(420));
+    height: u.rem(265);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: u.rem(25);
+    margin-top: u.rem(100);
+    border-radius: u.rem(5);
+  }
+
+  &__link {
+    color: var(--darkBlue);
+  }
+
+  &.open {
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+  }
+}

@@ -19,7 +19,8 @@ body {
   font-family: u.$font;
   background-color: var(--veryLightGray);
   color: var(--text-color);
-  font-size: u.rem(18)
+  font-size: u.rem(18);
+  overflow-x: hidden;
 }
 
 .container {

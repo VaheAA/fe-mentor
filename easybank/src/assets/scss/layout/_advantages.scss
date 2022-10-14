@@ -1,0 +1,79 @@
+@use '../util' as u;
+
+.advantages {
+  background-color: var(--lightGrayishBlue);
+  padding-block: u.rem(110);
+
+  @include u.breakpoint-down(small) {
+    padding-block: u.rem(70);
+
+  }
+
+
+  &__header {
+    width: min(100% - u.rem(40), u.rem(640));
+    margin-bottom: u.rem(85);
+
+
+    @include u.breakpoint-down(small) {
+      text-align: center;
+      margin-inline: auto;
+      margin-bottom: u.rem(60);
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: u.rem(20);
+
+
+    @include u.breakpoint-down(medium) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: u.rem(35);
+    }
+
+    @include u.breakpoint-down(small) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+  &__item {
+    width: min(100% - u.rem(40), u.rem(270));
+
+    @include u.breakpoint-down(small) {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &__item-icon {
+    display: block;
+    width: min(100% - u.rem(40), u.rem(75));
+    margin-bottom: u.rem(50);
+
+    @include u.breakpoint-down(small) {
+      margin-inline: auto;
+      margin-bottom: u.rem(30);
+    }
+  }
+
+  &__item-title {
+    color: var(--darkBlue);
+    font-weight: 400;
+    margin-bottom: u.rem(35);
+    font-size: clamp(u.rem(16), u.rem(16) + 2vw, u.rem(22));
+
+
+    @include u.breakpoint-down(small) {
+      margin-bottom: u.rem(20);
+    }
+  }
+
+  &__item-description {
+    font-size: u.rem(16);
+  }
+}

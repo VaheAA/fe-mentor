@@ -3,6 +3,10 @@
 .nav {
   height: 100%;
 
+  @include u.breakpoint-down(small) {
+    display: none;
+  }
+
   &__list {
     display: flex;
     align-items: center;

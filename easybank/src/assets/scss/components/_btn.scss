@@ -15,4 +15,8 @@
   &:hover {
     opacity: .75;
   }
+
+  @include u.breakpoint-down(small) {
+    margin-inline: auto;
+  }
 }

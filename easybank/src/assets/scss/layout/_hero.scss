@@ -2,28 +2,76 @@
 
 .hero {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: u.rem(115);
 
-  &__inner {
-    display: flex;
-    align-items: center;
-    gap: u.rem(115);
+
+  @include u.breakpoint-down(small) {
+    flex-direction: column-reverse;
+    gap: u.rem(20);
+    padding-bottom: u.rem(75);
   }
 
+
   &__content {
-    flex: 2;
+    max-width: u.rem(460);
+    width: 100%;
+    height: u.rem(660);
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include u.breakpoint-down(small) {
+      height: 100%;
+      text-align: center;
+    }
   }
 
   &__image {
     background-image: url('../img/images/bg-intro-desktop.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: left u.rem(-150);
-    width: 100%;
-    height: 100%;
-    flex: 3;
+    background-position: u.rem(320) u.rem(-175);
+    width: u.rem(1300);
+    height: u.rem(660);
+    padding-inline: u.rem(30);
+    position: absolute;
+    right: u.rem(-140);
+    top: u.rem(-100);
+
+    @include u.breakpoint-down(small) {
+      position: static;
+      background-image: url('../img/images/bg-intro-mobile.svg');
+      background-position: top center;
+      width: 100%;
+      height: 100%;
+      padding-inline: 0;
+    }
+
+    @include u.breakpoint-down(medium) {
+      width: u.rem(500);
+      right: u.rem(-40);
+      background-position: u.rem(20) u.rem(-70);
+
+    }
 
     img {
       display: block;
+      margin-left: u.rem(490);
+
+      @include u.breakpoint-down(small) {
+        margin-left: 0;
+        margin-top: u.rem(-135);
+      }
+
+      @include u.breakpoint-down(medium) {
+        width: u.rem(500);
+        margin-left: u.rem(80);
+      }
+
     }
   }
+
 }

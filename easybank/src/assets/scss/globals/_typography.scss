@@ -14,8 +14,21 @@ h3 {
   line-height: 1.1;
 
   &--primary {
-    font-size: clamp(u.rem(28), u.rem(16) + 2vw, u.rem(40));
+    font-size: clamp(u.rem(32), u.rem(20) + 2vw, u.rem(48));
     margin-bottom: u.rem(30);
+
+    @include u.breakpoint-down(small) {
+      margin-bottom: u.rem(20);
+    }
+  }
+
+  &--secondary {
+    font-size: clamp(u.rem(26), u.rem(16) + 2vw, u.rem(36));
+    margin-bottom: u.rem(30);
+
+    @include u.breakpoint-down(small) {
+      margin-bottom: u.rem(20);
+    }
   }
 }
 
@@ -23,8 +36,8 @@ h3 {
 .description {
   margin-top: 0;
   color: var(--grayishBlue);
-  font-size: u.rem(16);
-  line-height: u.rem(27);
+  font-size: u.rem(18);
+  line-height: u.rem(30);
   margin-bottom: u.rem(30);
 }
 
