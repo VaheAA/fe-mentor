@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script defer src="assets/js/app.js"></script>
+  <title>Expense Chart</title>
+</head>
+
+<body>
+  <main class="chart">
+    <header class="chart__header">
+      <div class="chart__header-info">
+        <span class="chart__header-title">My balance</span>
+        <span class="chart__header-balance">$921.48</span>
+      </div>
+      <div class="chart__header-logo">
+        <img src="assets/img/logo.svg" alt="Expense Chart">
+      </div>
+    </header>
+    <div class="chart__body">
+      <div class="chart__body-content">
+        <h1 class="chart__body-title">Spending - Last 7 days</h1>
+        <div class="chart__graphs" id="chart"></div>
+      </div>
+      <div class="chart__body-summary">
+        <div class="chart__body-total">
+          <span class="chart__body-label">Total this month</span>
+          <span class="chart__body-amount"> $478.33
+          </span>
+        </div>
+        <div class="chart__body-growth">
+          <span class="chart__body-percents"> +2.4%
+          </span>
+          <span class="chart__body-label"> from last month </span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

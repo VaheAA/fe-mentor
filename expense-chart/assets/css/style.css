@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+  --softRed: #ec775f;
+  --cyan: #76b5bc;
+  --darkBrown: hsl(25, 47%, 15%);
+  --mediumBrown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --veryPaleOrange: hsl(33, 100%, 98%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.8rem;
+  background-color: var(--cream);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart {
+  width: min(100% - 2rem, 54rem);
+}
+
+.chart__header {
+  background-color: var(--softRed);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+}
+
+.chart__header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  color: var(--veryPaleOrange);
+}
+
+.chart__header-title {
+  font-size: 1.8rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: clamp(1.6rem, 1.6rem + 2vw, 1.8rem);
+}
+
+.chart__header-balance {
+  font-size: clamp(1.8rem, 1.8rem + 2vw, 3.8rem);
+  font-weight: bold;
+  display: inline-block;
+}
+
+.chart__header-logo {
+  max-width: 100%;
+}
+
+.chart__header-logo img {
+  display: block;
+  width: 100%;
+}
+
+.chart__body {
+  background-color: var(--veryPaleOrange);
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+.chart__body-content {
+  border-bottom: 1px solid var(--cream);
+  margin-bottom: 2rem;
+}
+
+.chart__body-title {
+  font-size: clamp(1.8rem, 1.8rem + 2vw, 3.8rem);
+  color: var(--darkBrown);
+  margin-bottom: 2.5rem;
+}
+
+.chart__body-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart__body-total {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.chart__body-amount {
+  font-size: 5rem;
+  font-size: clamp(2.4rem, 2.4rem + 2vw, 5rem);
+  font-weight: bold;
+  color: var(--darkBrown);
+}
+
+.chart__body-label {
+  color: var(--mediumBrown);
+  display: inline-block;
+}
+
+.chart__body-growth {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.chart__body-percents {
+  font-weight: bold;
+  color: var(--darkBrown);
+}
+
+.tooltip {
+  background-color: var(--darkBrown);
+  padding: 1rem;
+  border-radius: 5px;
+  color: var(--veryPaleOrange);
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  background: transparent;
+  border: none;
+}
+
+.apexcharts-tooltip {
+  transform: translate(-50%, -70%);
+}
+
+.apexcharts-xaxis-label tspan {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.4rem;
+  fill: var(--mediumBrown);
+}
+
+
+
+@media screen and (max-width: 727px) {
+
+  .chart__header,
+  .chart__body {
+    padding: 2.5rem 1.5rem;
+  }
+}
