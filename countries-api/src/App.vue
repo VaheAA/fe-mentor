@@ -12,13 +12,22 @@ import MainHeader from "./components/header/MainHeader.vue";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
 
-.dark {
-  --mainColor: hsl(209, 23%, 22%);
-  --veryDarkBlueDark: hsl(207, 26%, 17%);
+html {
+  --mainColor: hsl(0, 0%, 100%);
+  --mainBg: hsl(207, 26%, 17%);
   --veryDarkBlueLight: hsl(200, 15%, 8%);
   --DarkGrayLight: #858585;
-  --mainBg: hsl(0, 0%, 98%);
-  --secondaryBg: hsl(0, 0%, 100%);
+  --secondaryBg: hsl(209, 23%, 22%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.dark {
+  --mainColor: hsl(0, 0%, 100%);
+  --mainBg: hsl(207, 26%, 17%);
+  --veryDarkBlueLight: hsl(200, 15%, 8%);
+  --DarkGrayLight: #858585;
+  --secondaryBg: hsl(209, 23%, 22%);
+  --white: hsl(0, 0%, 100%);
 }
 
 .light {
@@ -31,7 +40,7 @@ import MainHeader from "./components/header/MainHeader.vue";
 }
 
 @media (prefers-color-scheme: dark) {
-  .dark {
+  html {
     --mainColor: hsl(0, 0%, 100%);
     --mainBg: hsl(207, 26%, 17%);
     --veryDarkBlueLight: hsl(200, 15%, 8%);
@@ -42,7 +51,7 @@ import MainHeader from "./components/header/MainHeader.vue";
 }
 
 @media (prefes-color-scheme: light) {
-  .light {
+  html {
     --mainColor: hsl(209, 23%, 22%);
     --veryDarkBlueDark: hsl(207, 26%, 17%);
     --veryDarkBlueLight: hsl(200, 15%, 8%);
@@ -55,6 +64,7 @@ import MainHeader from "./components/header/MainHeader.vue";
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  transition: background 0.3s ease;
 }
 
 *,
