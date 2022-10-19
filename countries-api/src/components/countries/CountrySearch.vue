@@ -7,10 +7,10 @@
             @input="$emit('update:countryName', ($event.target as HTMLInputElement).value)">
           <v-icon name="bi-search" class="search__icon" />
         </form>
-        <select class="search__select" @change="$emit('update:region', ($event.target as HTMLSelectElement).value)">
+        <select name="region" class="search__select" placeholder="Filter by Region"
+          @change="$emit('update:region', ($event.target as HTMLSelectElement).value)">
           <option disabled selected value>Filter by Region</option>
-          <option class="search__select-option" v-for="option in options" :key="option.title" :value="option.title"
-            placeholder="Filter by Region">
+          <option class="search__select-option" v-for="option in options" :key="option.title" :value="option.title">
             {{option.title}}</option>
         </select>
       </div>

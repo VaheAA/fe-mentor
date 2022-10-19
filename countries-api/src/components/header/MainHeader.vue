@@ -3,7 +3,9 @@
     <div class="container">
       <div class="header__inner">
         <RouterLink class="header__logo" to="/">
-          Where in the world?
+          <h1>
+            Where in the world?
+          </h1>
         </RouterLink>
         <div class="header__theme">
           <button type="button" class="header__theme-btn" @click="toggleDarkMode()">
@@ -68,13 +70,19 @@ watch(() => dark.value, newValue => {
   }
 
   &__logo {
-    font-size: 3rem;
-    font-weight: 800;
 
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
 
-    @media screen and (max-width: 72rem) {
-      font-size: 2rem;
+      @media screen and (max-width: 72rem) {
+        font-size: 2rem;
+      }
     }
+
+
+
+
   }
 }
 </style>
