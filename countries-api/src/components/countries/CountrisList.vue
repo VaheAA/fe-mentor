@@ -3,7 +3,7 @@
     <div class="container">
       <div class="countries__inner">
         <ul class="countries__list">
-          <CountryItem v-for="country in countries" :key="country.name.common" :country="country" />
+          <CountryCard v-for="country in countries" :key="country.name" :country="country" />
         </ul>
       </div>
     </div>
@@ -11,9 +11,22 @@
 </template>
 
 <script setup lang="ts">
-import { isFetching, error, countries } from '../../composables/useCountries';
-import { ref } from 'vue';
-import CountryItem from './CountryItem.vue';
+import CountryCard from './CountryCard.vue';
+
+interface Country {
+  flags: {
+    png: string;
+    svg: string;
+  };
+  name: string;
+  population: number;
+  region: string;
+  capital: string;
+}
+
+const props = defineProps<{
+  countries: Country[]
+}>()
 
 
 </script>
@@ -23,8 +36,9 @@ import CountryItem from './CountryItem.vue';
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, 27.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 28rem));
     gap: 4.5rem;
+    place-content: center;
   }
 }
 </style>

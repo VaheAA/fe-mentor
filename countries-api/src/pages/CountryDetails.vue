@@ -1,10 +1,11 @@
 <template>
   <main>
-    <h1>Country Details</h1>
+    <CountryItem />
   </main>
 </template>
 
 <script setup lang="ts">
+import CountryItem from '../components/countries/CountryItem.vue';
 
 </script>
 
