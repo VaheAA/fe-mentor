@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/app.js"></script>
+  <title>W.</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="header__logo">
+          <img src="assets/images/logo.svg" alt="" />
+        </a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__item">
+              <a href="#" class="header__link">Home</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">New</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Popular</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Trending</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Categories</a>
+            </li>
+          </ul>
+        </nav>
+        <button id="menu-btn" class="hamburger">
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul class="mobile-nav__list">
+      <li class="mobile-nav__item">
+        <a href="#" class="mobile-nav__link">Home</a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="#" class="mobile-nav__link">New</a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="#" class="mobile-nav__link">Popular</a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="#" class="mobile-nav__link">Trending</a>
+      </li>
+      <li class="mobile-nav__item">
+        <a href="#" class="mobile-nav__link">Categories</a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <section class="news">
+      <div class="container">
+        <div class="news__inner">
+          <article class="news__main">
+            <img src="assets/images/image-web-3-desktop.jpg" alt="Web3 future"
+              class="news__main-cover news__main-cover--desktop" />
+            <img src="assets/images/image-web-3-mobile.jpg" alt="Web3 future"
+              class="news__main-cover news__main-cover--mobile" />
+            <div class="news__main-content">
+              <h1 class="news__main-title">The Bright Future of Web 3.0?</h1>
+              <div class="news__main-info">
+                <p class="news__main-subtitle">
+                  We dive into the next evolution of the web that claims to put
+                  the power of the platforms back into the hands of the people.
+                  But is it really fulfilling its promise?
+                </p>
+                <a href="#" class="read-more">Read more </a>
+              </div>
+            </div>
+          </article>
+          <aside class="news__side">
+            <h2 class="news__side-title">New</h2>
+            <ul class="news__side-list">
+              <li class="news__side-item">
+                <h3 class="news__side-item__title">
+                  <a href="#">Hydrogen VS Electric Cars</a>
+                </h3>
+                <p class="news__side-item__description">
+                  Will hydrogen-fueled cars ever catch up to EVs?
+                </p>
+              </li>
+              <li class="news__side-item">
+                <h3 class="news__side-item__title">
+                  <a href="">The Downsides of AI Artistry</a>
+                </h3>
+                <p class="news__side-item__description">
+                  What are the possible adverse effects of on-demand AI image generation?
+                </p>
+              </li>
+              <li class="news__side-item">
+                <h3 class="news__side-item__title">
+                  <a href=""> Is VC Funding Drying Up?</a>
+                </h3>
+                <p class="news__side-item__description">
+                  Private funding by VC firms is down 50% YOY. We take a look at what that means.
+                </p>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="recent">
+      <div class="container">
+        <div class="recent__inner">
+          <ul class="recent__list">
+            <li class="recent__item">
+              <article class="recent__article">
+                <img class="recent__article-cover" src="assets/images/image-retro-pcs.jpg" alt="">
+                <div class="recent__article-info">
+                  <span class="recent__article-number">01</span>
+                  <h4 class="recent__article-title">
+                    <a href="#"> Reviving Retro PCs
+                    </a>
+                  </h4>
+                  <p class="recent__article-subtitle">What happens when old PCs are given modern upgrades?
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="recent__item">
+              <article class="recent__article">
+                <img class="recent__article-cover" src="assets/images/image-top-laptops.jpg" alt="">
+                <div class="recent__article-info">
+                  <span class="recent__article-number">02</span>
+                  <h4 class="recent__article-title">
+                    <a href=""> Top 10 Laptops of 2022
+                    </a>
+                  </h4>
+                  <p class="recent__article-subtitle">Our best picks for various needs and budgets.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="recent__item">
+              <article class="recent__article">
+                <img class="recent__article-cover" src="assets/images/image-gaming-growth.jpg" alt="">
+                <div class="recent__article-info">
+                  <span class="recent__article-number">03</span>
+                  <h4 class="recent__article-title">
+                    <a href="#"> The Growth of Gaming
+                    </a>
+                  </h4>
+                  <p class="recent__article-subtitle">How the pandemic has sparked fresh opportunities.
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
