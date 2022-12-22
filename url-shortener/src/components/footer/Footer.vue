@@ -53,16 +53,16 @@
           </ul>
         </div>
         <div class="footer__social">
-          <a href="/" target="_blank">
+          <a href="/" target="_blank" aria-label="facebook">
             <font-awesome-icon class="footer__icon" icon="fa-brands fa-facebook" />
           </a>
-          <a href="/" target="_blank">
+          <a href="/" target="_blank" aria-label="twitter">
             <font-awesome-icon class="footer__icon" icon="fa-brands fa-twitter" />
           </a>
-          <a href="/" target="_blank">
+          <a href="/" target="_blank" aria-label="pinterest">
             <font-awesome-icon class="footer__icon" icon="fa-brands fa-pinterest" />
           </a>
-          <a href="/" target="_blank">
+          <a href="/" target="_blank" aria-label="instagram">
             <font-awesome-icon class="footer__icon" icon="fa-brands fa-instagram" />
           </a>
         </div>

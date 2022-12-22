@@ -10,8 +10,8 @@
             <div class="statistics__card-icon">
               <img src="@/assets/images/icon-brand-recognition.svg" alt="">
             </div>
-            <h4 class="statistics__card-title">Brand Recognition
-            </h4>
+            <h3 class="statistics__card-title">Brand Recognition
+            </h3>
             <p class="statistics__card-text">Boost your brand recognition with each click. Generic links don’t
               mean a thing. Branded links help instil confidence in your content.</p>
           </div>
@@ -19,8 +19,8 @@
             <div class="statistics__card-icon">
               <img class="statistics__card-icon" src="@/assets/images/icon-detailed-records.svg" alt="">
             </div>
-            <h4 class="statistics__card-title">Detailed Records
-            </h4>
+            <h3 class="statistics__card-title">Detailed Records
+            </h3>
             <p class="statistics__card-text">Gain insights into who is clicking your links. Knowing when and where
               people engage with your content helps inform better decisions.</p>
           </div>
@@ -28,8 +28,8 @@
             <div class="statistics__card-icon">
               <img class="statistics__card-icon" src="@/assets/images/icon-fully-customizable.svg" alt="">
             </div>
-            <h4 class="statistics__card-title">Fully Customizable
-            </h4>
+            <h3 class="statistics__card-title">Fully Customizable
+            </h3>
             <p class="statistics__card-text">Improve brand awareness and content discoverability through customizable
               links, supercharging audience engagement.</p>
           </div>

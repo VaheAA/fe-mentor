@@ -1,5 +1,5 @@
 <template>
-  <RouterLink class="logo" to="/">
+  <RouterLink class="logo" to="/" aria-label="home">
     <img src="@/assets/images/logo-light.svg" alt="" v-if="type === 'light'">
     <img src="@/assets/images/logo.svg" alt="" v-else>
   </RouterLink>
@@ -9,7 +9,7 @@
 
 defineProps({
   type: String
-})
+});
 
 
 </script>
