@@ -35,6 +35,13 @@ function click(): void {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in;
 
+  @media (max-width: 728px) {
+    min-width: auto;
+    font-size: 1.4rem;
+    padding-inline: .75rem;
+    padding-block: .55rem;
+  }
+
   &:hover {
     box-shadow: 0px 12px 18px rgba(0, 0, 0, 0.2);
 

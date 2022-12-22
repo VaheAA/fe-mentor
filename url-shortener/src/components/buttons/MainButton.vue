@@ -43,6 +43,10 @@ function click(): void {
     transition: all 0.3s ease;
     font-size: v-bind(fontSize);
 
+    @media (max-width: 728px) {
+      font-size: 1.6rem;
+    }
+
     &:hover {
       opacity: 0.7;
     }
@@ -57,6 +61,11 @@ function click(): void {
   &-submit {
     border-radius: 1rem;
     padding: 1.6rem;
+
+    @media (max-width: 728px) {
+      width: 100%;
+      padding: .8rem;
+    }
   }
 
   &--centered {

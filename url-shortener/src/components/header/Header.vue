@@ -12,16 +12,19 @@
         </button>
       </div>
     </div>
-    <MobileNav />
+    <MobileNav v-if="isMenuOpen" @close="isMenuOpen = false" />
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import Logo from '../logo/Logo.vue';
 import HeaderActions from './HeaderActions.vue';
 import HeaderNav from './HeaderNav.vue';
 import MobileNav from './MobileNav.vue';
+
+const route = useRoute();
 
 const isMenuOpen = ref(false);
 
@@ -29,11 +32,28 @@ function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
 
+watch(route, () => {
+  isMenuOpen.value = false;
+});
+
+watch(isMenuOpen, () => {
+  if (isMenuOpen.value) {
+    document.body.style.overflowY = 'hidden';
+  } else {
+    document.body.style.overflowY = 'visible';
+
+  }
+});
+
 </script>
 
 <style lang="scss" scoped>
 .header {
   padding-block: 5rem;
+
+  @media (max-width: 728px) {
+    padding-block: 2rem;
+  }
 
   &__inner {
     display: flex;
@@ -59,9 +79,9 @@ function toggleMenu() {
     height: 24px;
     cursor: pointer;
     position: relative;
-    z-index: 10;
     transition: all 0.2s ease;
     display: block;
+    z-index: 9999999;
 
     &__line {
       position: absolute;

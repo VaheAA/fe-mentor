@@ -4,6 +4,7 @@ import RegisterView from '@/views/register/RegisterView.vue';
 import LoginView from '@/views/login/LoginView.vue';
 import HistoryView from '@/views/history/HistoryView.vue';
 import { userSessionStore } from '../stores/user';
+import { isNotEmpty } from '@/helpers/checkIfEmptyObject';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,7 +41,7 @@ router.beforeEach((to, from, next) => {
   const sessionState = userStore();
 
   if (to.meta.needsAuth) {
-    if (sessionState.session) {
+    if (isNotEmpty(sessionState.session?.user)) {
       return next();
     } else {
       return next('/');
@@ -48,6 +49,6 @@ router.beforeEach((to, from, next) => {
   }
 
   return next();
-})
+});
 
 export default router;

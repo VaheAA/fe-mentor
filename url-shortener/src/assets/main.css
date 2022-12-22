@@ -100,3 +100,16 @@ button {
 td:has(.history__table-actions) {
   width: min-content;
 }
+
+
+@media (max-width: 728px) {
+  .title {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  .title.title--secondary {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+  }
+}

@@ -85,10 +85,23 @@ import Logo from '../logo/Logo.vue';
   &__inner {
     display: flex;
     align-items: start;
+
+    @media (max-width: 728px) {
+      flex-direction: column;
+      gap: 3rem;
+    }
   }
 
   &__menu {
     margin-left: auto;
+
+    @media (max-width: 728px) {
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+
   }
 
   &__menu-title {
@@ -117,6 +130,11 @@ import Logo from '../logo/Logo.vue';
     margin-left: 10rem;
     display: flex;
     gap: 2rem;
+
+    @media (max-width: 728px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__icon {

@@ -111,6 +111,10 @@ const handleSubmit = async (values: Record<string, any>) => {
     font-size: 1.8rem;
     color: var(--color-very-dark-violet);
 
+    @media (max-width: 728px) {
+      padding: .85rem 1rem;
+    }
+
 
     &:focus {
       outline: none;

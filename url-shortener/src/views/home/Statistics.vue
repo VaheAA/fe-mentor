@@ -39,10 +39,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
-
 <style scoped lang="scss">
 .statistics {
   background-color: var(--color-grayish-violet-transparent);
@@ -50,9 +46,21 @@
   padding-top: 22rem;
   padding-bottom: 10rem;
 
+
+  @media (max-width: 728px) {
+    margin-top: -10rem;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+  }
+
   .title {
     margin-bottom: 2rem;
     text-align: center;
+
+
+    @media (max-width: 728px) {
+      margin-bottom: 1rem;
+    }
   }
 
   .subtitle {
@@ -60,6 +68,11 @@
     text-align: center;
     max-width: 52rem;
     margin-inline: auto;
+
+
+    @media (max-width: 728px) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__cards {
@@ -69,6 +82,11 @@
     width: 100%;
     padding-top: 7rem;
     position: relative;
+
+    @media (max-width: 728px) {
+      flex-direction: column;
+      text-align: center;
+    }
 
     &::after {
       content: '';
@@ -93,10 +111,18 @@
 
     &:nth-child(2) {
       margin-top: 4rem;
+
+
+      @media (max-width: 728px) {
+        margin-top: 3rem;
+      }
     }
 
     &:nth-child(3) {
-      margin-top: 8rem;
+
+      @media (max-width: 728px) {
+        margin-top: 3rem;
+      }
     }
   }
 
@@ -110,6 +136,10 @@
     justify-content: center;
     margin-bottom: 2.5rem;
     margin-top: -6rem;
+
+    @media (max-width: 728px) {
+      margin-inline: auto;
+    }
 
     img {
       display: block;

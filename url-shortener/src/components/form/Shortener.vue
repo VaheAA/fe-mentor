@@ -1,6 +1,6 @@
 <template>
-  <div class="shortener" v-if="!loadingTracker">
-    <div class="container">
+  <div class="shortener">
+    <div class="container" style="position: relative">
       <div class="shortener__inner">
         <Form class="shortener__form" @submit="onSubmit" :validation-schema="schemaURL">
           <div class="shortener__form-group">
@@ -36,8 +36,6 @@ import { useRoute } from 'vue-router';
 
 const userStore = userSessionStore();
 const sessionState = userStore();
-
-
 const toastStore = useToastStore();
 const { openToast } = toastStore();
 const route = useRoute();
@@ -48,7 +46,6 @@ type URL = {
   original_link: string;
 };
 
-const loadingTracker = ref(false);
 const urlList = ref<URL[] | null>([]);
 
 configure({
@@ -77,11 +74,12 @@ async function onSubmit(values: any, { resetForm }: { resetForm: any; }): Promis
         long_url: data.value.original_link,
         short_url: data.value.short_link
       });
-    await sessionState.getUrls();
+    await sessionState.getUrls(1);
   }
 
   if (route.name === 'home') {
     urlList.value?.push(data.value);
+
   }
   sessionState.loading = false;
   openToast('Link shortened', 'success');
@@ -100,6 +98,7 @@ function copyLink(url: string): void {
   position: relative;
   z-index: 1;
 
+
   &__inner {
     background-image: url('@/assets/images/bg-shorten-desktop.svg');
     background-color: var(--color-very-dark-violet);
@@ -108,6 +107,10 @@ function copyLink(url: string): void {
     padding: 3.5rem 5rem;
     border-radius: 1.2rem;
     margin-bottom: 2.5rem;
+
+    @media (max-width: 728px) {
+      padding: 1.5rem;
+    }
   }
 
   &__form {
@@ -115,10 +118,17 @@ function copyLink(url: string): void {
     display: flex;
     align-items: center;
     gap: 4rem;
+
+    @media (max-width: 728px) {
+      flex-direction: column;
+      width: 100%;
+      gap: 1.6rem;
+    }
   }
 
   &__form-group {
     flex: 1;
+    width: 100%;
   }
 
   &__form-input {
@@ -127,6 +137,10 @@ function copyLink(url: string): void {
     border-radius: 1rem;
     border: none;
     font-size: 1.8rem;
+
+    @media (max-width: 728px) {
+      padding: 1.2rem;
+    }
 
     &:focus {
       outline: none

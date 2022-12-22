@@ -7,7 +7,12 @@
 
 <style lang="scss" scoped>
 .spinner__container {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba($color: #000000, $alpha: .1);
 }
 
 .spinner {

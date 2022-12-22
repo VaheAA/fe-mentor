@@ -5,7 +5,7 @@ import { supabase } from '@/db/supabase';
 import { getPagination } from '@/helpers/getPagination';
 
 
-type User = {
+export type User = {
   id: string;
   email: string;
   app_metadata: UserAppMetadata,
@@ -31,6 +31,7 @@ export const userSessionStore = () => defineStore({
       user: {} as User
     } as Session | null,
     loading: false,
+    paginationLoading: false,
     urls: [] as Url[] | null
   }),
   actions: {

@@ -29,9 +29,24 @@ import MainButton from '@/components/buttons/MainButton.vue';
   padding-block: 18rem;
   overflow: hidden;
 
+  @media (max-width: 728px) {
+    padding-block: 4rem;
+    margin-bottom: 4rem;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
+
+    @media (max-width: 728px) {
+      flex-direction: column-reverse;
+      gap: 3rem;
+      text-align: center;
+
+      .title {
+        margin-bottom: 2rem;
+      }
+    }
   }
 
   &__content {
@@ -41,6 +56,10 @@ import MainButton from '@/components/buttons/MainButton.vue';
   &__image {
     position: absolute;
     right: -1rem;
+
+    @media (max-width: 728px) {
+      position: static;
+    }
 
     img {
       display: block;

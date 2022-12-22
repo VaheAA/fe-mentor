@@ -2,8 +2,9 @@
   <div class="history" v-if="!sessionState.loading">
     <div class="container">
       <div class="history__inner">
+        <h1 class="title">Manage your links here!</h1>
         <Shortener />
-        <h1 class="title">My links</h1>
+        <h2 class="title title--secondary">My links</h2>
         <table class="history__table">
           <thead>
             <tr>
@@ -14,9 +15,9 @@
           </thead>
           <tbody>
             <tr v-for="(url, i) in urls" key="url.id">
-              <td>{{ url.long_url }}</td>
-              <td>{{ url.short_url }}</td>
-              <td>
+              <td data-label="Logn URL">{{ url.long_url }}</td>
+              <td data-label="Short URL">{{ url.short_url }}</td>
+              <td data-label="Actions">
                 <div class="history__table-actions">
                   <IconButton icon="clipboard" @click="copyLink(url.short_url)" />
                   <IconButton icon="times" @click="handleDelete(url.id)" />
@@ -35,6 +36,7 @@
               </td>
             </tr>
           </tfoot>
+          <TableLoadingSpinner v-if="sessionState.paginationLoading" />
         </table>
       </div>
     </div>
@@ -44,7 +46,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
-import MainButton from '@/components/buttons/MainButton.vue';
 import Shortener from '../../components/form/Shortener.vue';
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue';
 import PaginationButton from '@/components/buttons/PaginationButton.vue';
@@ -52,6 +53,9 @@ import IconButton from '@/components/buttons/IconButton.vue';
 import { supabase } from '@/db/supabase';
 import { userSessionStore } from '@/stores/user';
 import { useToastStore } from '@/stores/toast';
+import { isNotEmpty } from '@/helpers/checkIfEmptyObject';
+import TableLoadingSpinner from '@/components/ui/TableLoadingSpinner.vue';
+
 
 const toastStore = useToastStore();
 const { openToast } = toastStore();
@@ -64,7 +68,8 @@ const urls = ref<any[] | null>(null);
 
 
 onMounted(async () => {
-  sessionState.loading = true;
+  if (isNotEmpty(sessionState.session?.user))
+    sessionState.loading = true;
   await sessionState.getUrls(currentPage.value);
   urls.value = sessionState.urls;
   sessionState.loading = false;
@@ -89,13 +94,18 @@ function copyLink(url: string): void {
 }
 
 async function nextPage() {
+  sessionState.paginationLoading = true;
   if ((currentPage.value * pageSize.value) < urls.value!.length) currentPage.value++;
   await sessionState.getUrls(currentPage.value);
+  sessionState.paginationLoading = false;
+
 }
 
 async function prevPage() {
+  sessionState.paginationLoading = true;
   if (currentPage.value > 1) currentPage.value--;
   await sessionState.getUrls(currentPage.value);
+  sessionState.paginationLoading = false;
 }
 
 
@@ -104,6 +114,7 @@ async function prevPage() {
 <style scoped lang="scss">
 .history {
   padding-bottom: 2rem;
+  padding-top: 4rem;
 
   &__inner {
     .title {
@@ -114,6 +125,24 @@ async function prevPage() {
   &__table {
     width: 100%;
     border-collapse: collapse;
+    position: relative;
+
+    @media (max-width: 728px) {
+      border: 0;
+    }
+  }
+
+  thead {
+    @media (max-width: 728px) {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
   }
 
   &__table-actions {
@@ -147,6 +176,36 @@ async function prevPage() {
   tr {
     &:nth-child(even) {
       background-color: var(--color-grayish-violet-transparent);
+    }
+
+    @media (max-width: 728px) {
+      border-bottom: 1px solid var(--color-grayish-violet-transparent);
+      display: block;
+      margin-bottom: .625rem;
+    }
+  }
+
+  td {
+    @media (max-width: 728px) {
+      border-bottom: 1px solid var(--color-grayish-violet-transparent);
+      display: block;
+      font-size: 1.3rem;
+      text-align: right;
+    }
+
+    &::before {
+      @media (max-width: 728px) {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    &:last-child {
+      @media (max-width: 728px) {
+        border-bottom: 0;
+      }
     }
   }
 

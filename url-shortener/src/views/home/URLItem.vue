@@ -12,12 +12,12 @@ import MainButton from '@/components/buttons/MainButton.vue';
 defineProps({
   urlLong: String,
   urlShort: String
-})
+});
 
-const emit = defineEmits(['copy'])
+const emit = defineEmits(['copy']);
 
 function copy(): void {
-  emit('copy')
+  emit('copy');
 }
 
 
@@ -35,6 +35,13 @@ function copy(): void {
   background-color: var(--color-white);
   box-shadow: 1px 2px 1px rgba($color: #000000, $alpha: 0.1);
 
+  @media (max-width: 728px) {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    align-items: flex-start;
+  }
+
   &:not(:last-of-type) {
     margin-bottom: 1.5rem;
   }
@@ -43,7 +50,12 @@ function copy(): void {
     color: var(--color-very-dark-violet);
     font-size: 1.7rem;
     display: block;
-    width: max-content;
+    width: 100%;
+
+    @media (max-width: 728px) {
+      border-bottom: 1px solid var(--color-grayish-violet);
+      padding-bottom: 1rem;
+    }
   }
 
   &__short {
@@ -52,6 +64,11 @@ function copy(): void {
     display: block;
     width: max-content;
     margin-left: auto;
+
+
+    @media (max-width: 728px) {
+      margin-left: 0;
+    }
   }
 }
 </style>

@@ -1,26 +1,28 @@
 <template>
-  <div class="mobile-menu">
-    <div class="mobile-menu__inner">
+  <div class="mobile-menu" @click.self="$emit('close')">
+    <div class=" mobile-menu__inner">
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <RouterLink class="nav__link" to="/">Features</RouterLink>
+            <RouterLink class="nav__link" to="/" @click.self="$emit('close')">Features</RouterLink>
           </li>
           <li class="nav__item">
-            <RouterLink class="nav__link" to="/">Pricing</RouterLink>
+            <RouterLink class="nav__link" to="/" @click.self="$emit('close')">Pricing</RouterLink>
           </li>
           <li class="nav__item">
-            <RouterLink class="nav__link" to="/">Resources</RouterLink>
+            <RouterLink class="nav__link" to="/" @click.self="$emit('close')">Resources</RouterLink>
           </li>
         </ul>
       </nav>
       <div class="mobile-menu__actions">
-        <TextButton v-if="sessionState.session" btn-text="My Links" href="/history" :centered="true" />
-        <TextButton v-if="!sessionState.session" btn-text="Log In" href="/login" :centered="true" />
+        <TextButton v-if="sessionState.session && isNotEmpty(sessionState.session.user)" btn-text="My Links"
+          href="/history" :centered="true" @click.self="$emit('close')" />
+        <TextButton v-if="!sessionState.session || !isNotEmpty(sessionState.session.user)" btn-text="Log In"
+          href="/login" :centered="true" @click.self="$emit('close')" />
         <MainButton @click="signOut" as="button" v-else btn-text="Log Out" :btn-submit="false" font-size="1.6rem"
-          type="button" :centered="true" />
-        <MainButton v-if="!sessionState.session" :btn-submit="false" btn-text="Sign Up" font-size="1.6rem" type="button"
-          as="link" :centered="true" />
+          type="button" :centered="true" @click.self="$emit('close')" />
+        <MainButton v-if="!sessionState.session || !isNotEmpty(sessionState.session.user)" :btn-submit="false"
+          btn-text="Sign Up" font-size="1.6rem" type="button" as="link" :centered="true" @click.self="$emit('close')" />
       </div>
     </div>
   </div>
@@ -29,9 +31,9 @@
 <script setup lang="ts">
 import MainButton from '../buttons/MainButton.vue';
 import TextButton from '../buttons/TextButton.vue';
-
 import { userSessionStore } from '../../stores/user';
 import { supabase } from '@/db/supabase';
+import { isNotEmpty } from '@/helpers/checkIfEmptyObject';
 
 const userStore = userSessionStore();
 const sessionState = userStore();
@@ -39,6 +41,8 @@ const sessionState = userStore();
 const signOut = async () => {
   supabase.auth.signOut();
 };
+
+
 
 </script>
 
@@ -58,7 +62,7 @@ const signOut = async () => {
 
   &__inner {
     background-color: var(--color-dark-violet);
-    width: 95%;
+    width: 90%;
     padding-inline: 2rem;
     padding-block: 3rem;
     margin-inline: auto;
