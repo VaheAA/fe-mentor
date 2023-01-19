@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="/dist/style.css">
+  <script async src="./app.js"></script>
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+
+<body class="font-main">
+  <header
+    class="max-w-[1380px] bg-white mx-auto flex items-center justify-between lg:justify-start py-8 px-4 lg:px-2 fixed w-full left-0 right-0 top-0">
+    <a href="#" aria-hidden class="inline-block mr-12">
+      <img src="/assets/images/logo.svg" alt="logo">
+    </a>
+    <nav class="hidden lg:block">
+      <ul class="flex items-center space-x-12 text-mediumGray">
+        <li class="relative">
+          <a class="group inline-flex items-center space-x-2 hover:text-almostBlack transition-all" href="#"
+            data-dropdown="link">
+            <span>Features</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-4 h-4 group-hover:rotate-180 transition-all">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </a>
+          <ul class="hidden absolute top-auto left-[-40px] bg-white px-6 py-4 rounded-lg shadow-2xl w-max mt-4"
+            data-dropdown="menu">
+            <li class="mb-3">
+              <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                data-dropdown="nested-link">
+                <img src="/assets/images/icon-todo.svg" alt="">
+                <span>Todo list</span>
+              </a>
+            </li>
+            <li class="mb-3">
+              <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                data-dropdown="nested-link">
+                <img src="/assets/images/icon-calendar.svg" alt="">
+                <span>Calendar</span>
+              </a>
+            </li>
+            <li class="mb-3">
+              <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                data-dropdown="nested-link">
+                <img src="/assets/images/icon-reminders.svg" alt="">
+                <span>Reminders</span>
+              </a>
+            </li>
+            <li>
+              <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                data-dropdown="nested-link">
+                <img src="/assets/images/icon-planning.svg" alt="">
+                <span>Planning</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="relative">
+          <a class="group inline-flex items-center space-x-2 hover:text-almostBlack transition-all relative" href="#"
+            data-dropdown="link">
+            <span>Company</span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="currentColor" class="w-4 h-4 group-hover:rotate-180 transition-all">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </a>
+          <ul class="hidden absolute top-auto w-max-content bg-white px-6 py-4 rounded-lg shadow-2xl w-max mt-4"
+            data-dropdown="menu">
+            <li class="mb-3">
+              <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                data-dropdown="nested-link">
+                <span>History</span>
+              </a>
+            </li>
+            <li class="mb-3">
+              <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                data-dropdown="nested-link">
+                <span>Our team</span>
+              </a>
+            </li>
+            <li>
+              <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                data-dropdown="nested-link">
+                <span>Blog</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a class="hover:text-almostBlack transition-all" href="#">Careers</a></li>
+        <li><a class="hover:text-almostBlack transition-all" href="#">About</a></li>
+      </ul>
+    </nav>
+    <ul class="ml-auto hidden lg:flex items-center space-x-10 text-mediumGray">
+      <li><button class="hover:text-almostBlack transition-all">Login</button></li>
+      <li><button
+          class="border border-almostBlack rounded-xl px-4 py-2 hover:text-almostBlack transition-all">Register</button>
+      </li>
+    </ul>
+    <button class="block lg:hidden z-10" data-button="hamburger" data-open="false">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+    <div
+      class="block lg:hidden absolute h-screen w-full left-0 top-0 bg-black/40 translate-x-[200%] transition-all duration-300 ease-linear"
+      role="mobile-navigation" data-role="mobile-menu">
+      <nav class="ml-auto w-[65%] h-full bg-white px-4 py-5">
+        <ul class="text-mediumGray mt-14">
+          <li class="mb-3">
+            <a class="inline-flex items-center space-x-2" href="#" data-menu="button">
+              <span>Features</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-4 h-4 group-hover:rotate-180 transition-all">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </a>
+            <ul class="h-0 overflow-hidden transition-all duration-300 ml-5" data-menu="list" data-expanded="false">
+              <li class="mb-3">
+                <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                  data-dropdown="nested-link">
+                  <img src="/assets/images/icon-todo.svg" alt="">
+                  <span>Todo list</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                  data-dropdown="nested-link">
+                  <img src="/assets/images/icon-calendar.svg" alt="">
+                  <span>Calendar</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                  data-dropdown="nested-link">
+                  <img src="/assets/images/icon-reminders.svg" alt="">
+                  <span>Reminders</span>
+                </a>
+              </li>
+              <li>
+                <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                  data-dropdown="nested-link">
+                  <img src="/assets/images/icon-planning.svg" alt="">
+                  <span>Planning</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="mb-3">
+            <a class="inline-flex items-center space-x-2" href="#" data-menu="button">
+              <span>Company</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-4 h-4 group-hover:rotate-180 transition-all">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </a>
+            <ul class="h-0 overflow-hidden transition-all duration-300 ml-5" data-menu="list" data-expanded="false">
+              <li class="mb-3">
+                <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                  data-dropdown="nested-link">
+                  <span>History</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                  data-dropdown="nested-link">
+                  <span>Our team</span>
+                </a>
+              </li>
+              <li>
+                <a class="inline-flex items-center space-x-2  hover:text-almostBlack transition-all" href="#"
+                  data-dropdown="nested-link">
+                  <span>Blog</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="mb-3"><a class="hover:text-almostBlack transition-all" href="#">Careers</a></li>
+          <li class="mb-5"><a class="hover:text-almostBlack transition-all" href="#">About</a></li>
+          <li class="w-full align-center mb-3"><button
+              class="hover:text-almostBlack transition-all w-full text-center">Login</button></li>
+          <li><button
+              class="border border-almostBlack rounded-xl px-4 py-2 hover:text-almostBlack transition-all w-full text-center">Register</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="py-32  lg:py-44">
+    <section
+      class="max-w-[1150px] mx-auto flex flex-col-reverse lg:flex-row items-center gap-11 px-4 lg:px-0 mb-8 lg:mb-0">
+      <div class="w-full lg:w-1/2">
+        <h1 class="text-[36px] lg:text-[72px] font-bold leading-[1.025] mb-12 text-center lg:text-left">Make <br
+            class="hidden lg:block" />
+          remote work</h1>
+        <p class="text-mediumGray font-semibold mb-6 lg:mb-10 text-lg text-center lg:text-left">Get your team in sync,
+          no matter
+          your location. <br class="hidden lg:block" />
+          Streamline
+          processes,
+          create team rituals, and <br class="hidden lg:block" />
+          watch productivity soar.</p>
+        <button
+          class="mx-auto lg:mx-0 block border border-almostBlack rounded-xl px-6 py-3 text-lg font-semibold bg-almostBlack hover:bg-almostWhite text-almostWhite hover:text-almostBlack transition-all">Learn
+          more</button>
+      </div>
+      <div class="w-full lg:w-1/2 w-max-[500px]">
+        <img class="block object-cover" src="/assets/images/image-hero-desktop.png" alt="snap">
+      </div>
+    </section>
+    <div class="max-w-[1150px] mx-auto flex items-center px-3">
+      <ul class="flex justify-start items-center space-x-8">
+        <li><img src="/assets/images/client-databiz.svg" alt="databiz"></li>
+        <li><img src="/assets/images/client-audiophile.svg" alt="audiophile"></li>
+        <li><img src="/assets/images/client-meet.svg" alt="meet"></li>
+        <li><img src="/assets/images/client-maker.svg" alt="maker"></li>
+      </ul>
+    </div>
+  </main>
+</body>
+
+</html>
