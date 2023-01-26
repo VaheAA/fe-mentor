@@ -1,0 +1,78 @@
+@use '../util' as u;
+
+
+.download {
+  padding-top: u.rem(120);
+
+  @include u.breakpoint-down(medium) {
+    padding-top: u.rem(65);
+  }
+
+
+  &__list {
+    width: min(100% - u.rem(20), u.rem(1050));
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: u.rem(75);
+
+    @include u.breakpoint-down(medium) {
+      flex-direction: column;
+      gap: u.rem(35);
+    }
+
+  }
+
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: u.rem(25) u.rem(15);
+    flex-grow: 0;
+    flex-basis: u.rem(290);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 8px;
+
+    &:nth-of-type(2) {
+      margin-top: u.rem(60);
+    }
+
+    &:nth-of-type(3) {
+      margin-top: u.rem(120);
+    }
+
+
+    @include u.breakpoint-down(medium) {
+      &:nth-of-type(2) {
+        margin-top: 0;
+      }
+
+      &:nth-of-type(3) {
+        margin-top: 0;
+      }
+
+    }
+
+    .title,
+    .text {
+      margin-bottom: u.rem(15);
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: u.rem(100);
+    height: u.rem(100);
+    object-fit: contain;
+    margin-bottom: u.rem(32);
+  }
+
+  &__dots {
+    display: block;
+    width: 100%;
+    padding-block: u.rem(15);
+  }
+}

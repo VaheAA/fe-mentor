@@ -1,0 +1,117 @@
+@use '../util/' as u;
+
+
+.features {
+  padding-top: u.rem(100);
+  padding-bottom: u.rem(60);
+  position: relative;
+
+  @include u.breakpoint-down(medium) {
+    padding-bottom: 0;
+  }
+
+  &__tabs-links {
+    max-width: u.rem(740);
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: u.rem(55);
+    border-bottom: .5px solid rgba($color: #000000, $alpha: .2);
+
+
+    @include u.breakpoint-down(medium) {
+      flex-direction: column;
+      border-bottom: none;
+    }
+
+    li {
+      width: 100%;
+      height: u.rem(52);
+
+      @include u.breakpoint-down(medium) {
+        &:first-of-type {
+          border-block: .5px solid rgba($color: #000000, $alpha: .2);
+        }
+
+        &:last-of-type {
+          border-block: .5px solid rgba($color: #000000, $alpha: .2);
+        }
+      }
+    }
+  }
+
+  &__tabs-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    color: var(--cl-neutral-1);
+    transition: all 0.3s ease;
+    font-weight: 500;
+
+    @include u.breakpoint-down(medium) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      margin-inline: auto;
+    }
+
+    &.active {
+      color: var(--cl-neutral-2);
+    }
+
+    &:hover {
+      color: var(--cl-primary-2);
+    }
+
+    &.active:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--cl-primary-2);
+    }
+  }
+
+  &__tabs-item {
+    display: none;
+
+
+    &.active {
+      display: flex;
+      align-items: center;
+      gap: u.rem(60);
+
+
+      @include u.breakpoint-down(medium) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__tabs-image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__tabs-content {
+    flex: 1;
+
+    @include u.breakpoint-down(medium) {
+      text-align: center;
+    }
+
+    .title,
+    .text {
+      margin-bottom: u.rem(20);
+    }
+  }
+}

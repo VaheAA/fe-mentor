@@ -1,0 +1,59 @@
+@use '../util' as u;
+
+
+.footer {
+  background-color: var(--cl-neutral-2);
+
+  &__inner {
+    padding-block: u.rem(35);
+    color: var(--cl-light);
+    display: flex;
+    align-items: center;
+    gap: u.rem(70);
+
+    @include u.breakpoint-down(medium) {
+      flex-direction: column;
+      gap: u.rem(40);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: u.rem(45);
+
+    @include u.breakpoint-down(medium) {
+      flex-direction: column;
+      gap: u.rem(25);
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-size: u.rem(14);
+    letter-spacing: u.rem(1.75);
+
+    &:hover {
+      color: var(--cl-primary-2);
+    }
+  }
+
+  .menu__social {
+    margin-bottom: 0;
+    margin-left: auto;
+
+    @include u.breakpoint-down(medium) {
+      margin-right: auto;
+    }
+  }
+
+  .menu__social ion-icon {
+    transition: all 0.3 ease;
+
+    &:hover {
+      fill: var(--cl-primary-2);
+      stroke: var(--cl-primary-2);
+    }
+  }
+}

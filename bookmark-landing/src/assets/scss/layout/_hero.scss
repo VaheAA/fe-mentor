@@ -1,0 +1,44 @@
+@use '../util' as u;
+
+.hero {
+  position: relative;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: u.rem(40);
+
+    @include u.breakpoint-down(medium) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  }
+
+  .title,
+  .text {
+    margin-bottom: u.rem(25);
+  }
+
+  &__content {
+    flex: 2;
+  }
+
+  &__image {
+    flex: 3;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: u.rem(12);
+
+    @include u.breakpoint-down(medium) {
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@use '../util' as u;
+
+.btn {
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: u.rem(13) u.rem(32);
+  border-radius: u.rem(6);
+  border: 2px solid transparent;
+  font-size: u.rem(16);
+
+
+
+  &-login {
+    background-color: var(--cl-primary-2);
+    color: var(--cl-light);
+    text-transform: uppercase;
+    letter-spacing: u.rem(1.75);
+
+
+    &:hover {
+      background-color: var(--cl-light);
+      border-color: var(--cl-primary-2);
+      color: var(--cl-primary-2);
+    }
+
+    &:active {
+      scale: .97;
+    }
+  }
+
+  &-submit {
+    background-color: var(--cl-primary-2);
+    color: var(--cl-light);
+
+    @include u.breakpoint-down(medium) {
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: var(--cl-light);
+      border-color: var(--cl-primary-2);
+      color: var(--cl-primary-2);
+    }
+
+    &:active {
+      scale: .97;
+    }
+  }
+
+  &-dark {
+    background-color: var(--cl-primary-1);
+    color: var(--cl-light);
+
+    &:hover {
+      background-color: transparent;
+      border-color: var(--cl-primary-1);
+      color: var(--cl-primary-1);
+    }
+  }
+
+  &-light {
+    background-color: var(--cl-neutral-3);
+    color: var(--cl-neutral-2);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+    &:hover {
+      background-color: transparent;
+      border-color: var(--cl-neutral-2);
+      color: var(--cl-neutral-2);
+    }
+  }
+
+
+  &-menu {
+    display: block;
+    border: 2px solid var(--cl-light);
+    text-align: center;
+    font-size: u.rem(18);
+    letter-spacing: u.rem(1.75);
+  }
+}

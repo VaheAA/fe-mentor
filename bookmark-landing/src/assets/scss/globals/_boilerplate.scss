@@ -1,0 +1,86 @@
+@use '../util' as u;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: u.$font;
+  background-color: #fff;
+  color: var(--cl-neutral-2);
+  font-size: u.rem(18);
+  line-height: 1.25
+}
+
+.main {
+  padding-top: u.rem(180);
+
+  @include u.breakpoint-down(medium) {
+    padding-top: u.rem(90);
+  }
+}
+
+.container {
+  width: min(100% - u.rem(40), u.rem(1300));
+  margin-inline: auto;
+}
+
+.noscroll {
+  overflow-y: hidden;
+}
+
+.heading {
+  max-width: u.rem(560);
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: u.rem(40);
+
+  .title {
+    margin-bottom: u.rem(20);
+  }
+
+}
+
+.bg {
+  width: min(100% - u.rem(20), u.rem(500));
+  height: u.rem(350);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--cl-primary-1);
+  z-index: -1;
+  border-bottom-left-radius: u.rem(100);
+
+
+  @include u.breakpoint-down(medium) {
+    width: 75%;
+    top: u.rem(100);
+    bottom: unset;
+    height: u.rem(160);
+  }
+
+
+  &-left {
+    right: unset;
+    left: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: u.rem(100);
+
+
+    @include u.breakpoint-down(medium) {
+      top: unset;
+      bottom: u.rem(200);
+    }
+  }
+}

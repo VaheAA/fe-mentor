@@ -1,0 +1,15 @@
+@use '../util' as u;
+
+
+.logo {
+  display: block;
+  max-width: u.rem(150);
+  position: relative;
+  z-index: 999;
+
+  svg {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+  }
+}

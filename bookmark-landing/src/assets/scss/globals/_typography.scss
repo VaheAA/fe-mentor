@@ -1,0 +1,58 @@
+@use '../util/' as u;
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+.title {
+  font-weight: bold;
+
+  &-primary {
+    font-size: clamp(u.rem(34), u.rem(18) + 2vw, u.rem(44));
+    line-height: u.rem(48);
+  }
+
+  &-secondary {
+    font-size: clamp(u.rem(24), u.rem(14) + 1.5vw, u.rem(32));
+    line-height: u.rem(34);
+  }
+
+  &-tertiary {
+    font-size: clamp(u.rem(16), u.rem(14) + 1.5vw, u.rem(20));
+    line-height: u.rem(26);
+  }
+
+  &-spread {
+    font-size: u.rem(13);
+    letter-spacing: 5px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+.text {
+  color: var(--cl-neutral-1);
+
+  @include u.breakpoint-down(medium) {
+    font-size: u.rem(16);
+  }
+
+  &-small {
+    font-size: u.rem(16);
+
+    @include u.breakpoint-down(medium) {
+      font-size: u.rem(14);
+    }
+  }
+}
+
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}

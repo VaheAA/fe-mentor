@@ -1,0 +1,25 @@
+@use '../util' as u;
+
+.header {
+  height: u.rem(120);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--cl-light);
+  z-index: 10;
+
+
+  @include u.breakpoint-down(medium) {
+    height: u.rem(75);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

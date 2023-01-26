@@ -1,0 +1,33 @@
+@use '../util' as u;
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: u.rem(42);
+
+  @include u.breakpoint-down(medium) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: u.rem(42);
+  }
+
+  &__item {
+    height: 100%;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-size: u.rem(14);
+    letter-spacing: u.rem(1.75);
+
+    &:hover {
+      color: var(--cl-primary-2);
+    }
+  }
+}
